@@ -1,0 +1,35 @@
+sudo dnf install postfix
+sudo dnf install mailx
+
+systemctl status postfix
+
+sudo nano /etc/postfix/passwd
+
+
+sudo postmap /etc/postfix/passwd
+
+sudo chmod 600 /etc/postfix/passwd
+sudo chmod 600 /etc/postfix/passwd.db 
+ 
+
+
+cd /etc/postfix
+ls
+sudo nano main.cf
+
+
+relayhost = [smtp.gmail.com]:587
+
+smtp_sasl_auth_enable = yes
+
+smtp_sasl_security_options = noanonymous
+
+smtp_sasl_password_maps = hash:/etc/postfix/passwd
+
+smtp_tls_security_level = encrypt
+
+systemctl reload postfix
+
+
+
+mailx 

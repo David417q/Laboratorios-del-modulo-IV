@@ -1,0 +1,41 @@
+cd /var/www/html 
+
+sudo mkdir mundo 
+
+cd mundo/
+
+sudo nano index.html
+
+dentro del html vamos a poner 
+
+<html>
+<h1> hola mundo </h1>
+</html>
+
+
+sudo nano /etc/httpd/conf/httpd.conf
+
+
+<virtualhost *:80>
+servername mundo.localhost
+DocumentRoot /var/www/html/mundo
+</Virtualhost>
+
+salir y guardar
+
+systemctl restart httpd
+
+
+cd .. 
+mkdir DavidC
+cd DavodC
+sudo nano index.html
+<html>
+<h1> davidcabrera 20241922 Sistema operativo3 </h1>
+</html>
+
+nano /etc/httpd/conf/httpd.conf
+
+
+systemctl restart httpd
+

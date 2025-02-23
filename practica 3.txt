@@ -1,0 +1,14 @@
+sudo dnf install cups -y
+
+sudo dnf install cups-pdf -y
+
+systemctl status cups
+
+cupsctl --remote-admin --remote-any --share-printers
+
+sudo firewall-cmd --permanent --add-port=631/tcp
+
+sudo firewall-cmd --reload
+
+
+
